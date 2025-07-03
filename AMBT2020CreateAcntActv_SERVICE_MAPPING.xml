@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ServiceMapping>
+<external-service-name>AMBT2020CreateAcntActv</external-service-name>
+ <external-method>POST</external-method>
+ <request-url>https://demoapps.tcsbancs.com/Core/accountManagement</request-url>
+<content-type>application/json</content-type>
+<!--<content-type>application/x-www-form-urlencoded</content-type>
+ <input-string>message</input-string>-->
+<input-argument>
+	<name>Header</name>
+	<type>SingleRow</type>
+	<argument-index>1</argument-index>
+		<argument-field>
+				<internal-field>Entity</internal-field>
+				<external-field>entity</external-field>
+		</argument-field>
+		<argument-field>
+				<internal-field>LanguageCode</internal-field>
+				<external-field>languageCode</external-field>
+		</argument-field>
+		<argument-field>
+				<internal-field>UserId</internal-field>
+				<external-field>userId</external-field>
+		</argument-field>
+</input-argument>
+<input-argument>
+	<name>account</name>
+	<type>SingleRow</type>
+	<argument-index>2</argument-index>
+		<argument-field>
+				<internal-field>BP_ID</internal-field>
+				<external-field>customerId</external-field>
+		</argument-field>
+		
+		<argument-field>
+				<internal-field>ACNT_LNG</internal-field>
+				<external-field>accountLanguage</external-field>
+		</argument-field>
+		
+		<argument-field>
+				<internal-field>ACNT_USG</internal-field>
+				<external-field>accountUsage</external-field>
+		</argument-field>
+		
+		<argument-field>
+				<internal-field>POS_CRNCY</internal-field>
+				<external-field>accountCurrency</external-field>
+		</argument-field>
+		
+		<argument-field>
+				<internal-field>POS_TYPE</internal-field>
+				<external-field>accountType</external-field>
+		</argument-field>
+		
+		<argument-field>
+				<internal-field>MODE_OF_OPRN</internal-field>
+				<external-field>operationMode</external-field>
+		</argument-field>
+		
+		<argument-field>
+				<internal-field>SHRT_NAME</internal-field>
+				<external-field>accountName</external-field>
+		</argument-field>
+		
+		<argument-field>
+				<internal-field>BRANCH_ID</internal-field>
+				<external-field>branchId</external-field>
+		</argument-field>
+		
+		<argument-field>
+				<internal-field>TRANSIT_ID</internal-field>
+				<external-field>product</external-field>
+		</argument-field>
+</input-argument>
+
+<input-argument>
+	<name>accountMandateHistory</name>
+	<type>MultiRow</type>
+	<argument-index>3</argument-index>
+		<argument-field>	
+				<internal-field>ACNT_MANDATE</internal-field>
+				<external-field>modeOfOperation</external-field>
+		</argument-field>
+</input-argument>
+
+<output-argument>
+	<name>account</name>
+	<type>SingleRow</type>
+	<argument-index>1</argument-index>
+		<argument-field>	
+			<internal-field>BBAN_SEQ_ID</internal-field>
+			<external-field>BBAN</external-field>
+		</argument-field>
+		<argument-field>	
+			<internal-field>BBAN_NUM</internal-field>
+			<external-field>BBANNumber</external-field>
+		</argument-field>
+		<argument-field>	
+			<internal-field>IBAN_NUM</internal-field>
+			<external-field>IBANNumber</external-field>
+		</argument-field>
+</output-argument>
+</ServiceMapping>
